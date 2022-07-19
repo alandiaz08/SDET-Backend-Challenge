@@ -19,7 +19,7 @@ public class DemoTests extends TestBase{
   @Test(groups = "DemoTests",
         enabled = true
         )
-  public void getFirstTenPhotosOnSol1000Test(){
+  public void firstTenPhotosOnSol1000(){
     MarsRoverPhoto picsLength = new MarsRoverPhoto();
     MarsRoverPhotoResponse response = nasaAPIClient.getCuriosityPhotosBySol(sol);
     logger.info("Size of first Ten Pics array of sol");
@@ -29,7 +29,7 @@ public class DemoTests extends TestBase{
   @Test(groups = "DemoTests",
         enabled = true
         )
-  public void getFirstTenPhotosOnSol1000QueryingByEarthDateTest(){
+  public void firstTenPhotosOnSol1000ByEarthDate(){
     MarsRoverPhoto picsLength = new MarsRoverPhoto();
     MarsRoverPhotoResponse response = nasaAPIClient.getCuriosityPhotosByEarthDate(earthDateFor1000Sol);
     logger.info("Size of first Ten Pics array of earth date for 1000 sol");
@@ -39,7 +39,7 @@ public class DemoTests extends TestBase{
   @Test(groups = "DemoTests",
         enabled = true
   )
-  public void comparePhotosTakenOnSol1000QueriedBySolAndByEarthDateTest(){
+  public void photosTakenOnSol1000BySolAndByEarthDate(){
     MarsRoverPhoto marsRoverPhoto = new MarsRoverPhoto();
     MarsRoverPhotoResponse solResp = nasaAPIClient.getCuriosityPhotosBySol(sol);
     MarsRoverPhoto[] firstTenSolPics = marsRoverPhoto.getPhotos(solResp);
@@ -59,7 +59,7 @@ public class DemoTests extends TestBase{
   @Test(groups = "DemoTests",
         enabled = true
   )
-  public void validateNumberOfPhotosTakenByEachCameraOfTheCuriosity(){
+  public void numberOfPhotosTakenByEachCameraOfTheCuriosity(){
     Camera camera = new Camera();
     List<Integer> allPhotos = new ArrayList<>();
     List<CuriosityCameras> cameraNames = new ArrayList<>();
